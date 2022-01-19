@@ -4,7 +4,7 @@
 @section ('content')
 
 <div class="container text-center mt-5">
-    <h1>COMICS LIST</h1>
+    <h1>LANDING PAGE</h1>
 
     <div class="row">
 

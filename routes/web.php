@@ -13,10 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'PageController@index');
+Route::get('/', 'PageController@index')->name('welcome');
 
 //7 routes
-Route::get('comics', 'Admin\ComicController@index');
+Route::get('comics', 'Admin\ComicController@index')->name('comics');
 Route::get('comics/create', 'Admin\ComicController@create');
 Route::post('comics', 'Admin\ComicController@store');
 Route::get('comics/{comic}', 'Admin\ComicController@show');

@@ -2,17 +2,10 @@
 <header class="bg-dark pt-3 d-flex justify-content-center">
     <ul class="nav pills text-center" id="navId" role="tablist">
         <li class="nav-item">
-            <a href="#tab1Id" class="nav-link active" data-bs-toggle="tab">Active</a>
+            <a href="{{route('welcome')}}" class="nav-link active" data-bs-toggle="tab">Home</a>
         </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                aria-expanded="false">Dropdown</a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="#tab2Id">Action</a>
-                <a class="dropdown-item" href="#tab3Id">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#tab4Id">Action</a>
-            </div>
+        <li class="nav-item">
+            <a href="{{route('comics')}}" class="nav-link active" data-bs-toggle="tab">Comics</a>
         </li>
         <li class="nav-item" role="presentation">
             <a href="#tab5Id" class="nav-link" data-bs-toggle="tab">Another link</a>
