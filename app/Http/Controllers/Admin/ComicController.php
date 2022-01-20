@@ -88,7 +88,7 @@ class ComicController extends Controller
 
         $comic->update($validated_data);
 
-        return redirect()->route('admin.comics.admin')->with('message', 'Post Modificato');
+        return redirect()->route('adminpage')->with('message', 'Comic Modificato');
     }
 
     /**
@@ -100,7 +100,7 @@ class ComicController extends Controller
     public function destroy(Comic $comic)
     {
         $comic->delete();
-        return redirect()->route('admin.comics.admin')->with('message', 'Post Cancellato');
+        return redirect()->route('adminpage')->with('message', 'Comic Cancellato');
     }
 
 
