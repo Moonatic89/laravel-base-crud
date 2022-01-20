@@ -7,8 +7,8 @@
         <li class="nav-item">
             <a href="{{route('comics')}}" class="nav-link active" data-bs-toggle="tab">Comics</a>
         </li>
-        <li class="nav-item" role="presentation">
-            <a href="#tab5Id" class="nav-link" data-bs-toggle="tab">Another link</a>
+        <li class="nav-item">
+            <a href="{{route('adminpage')}}" class="nav-link" data-bs-toggle="tab">ADMIN SECTION</a>
         </li>
         <li class="nav-item" role="presentation">
             <a href="#" class="nav-link disabled" data-bs-toggle="tab">Disabled</a>

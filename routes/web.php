@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'PageController@index')->name('welcome');
+Route::get('admin/comics/admin', 'Admin\ComicController@admin')->name('adminpage');
+
 
 //7 routes
 Route::get('admin/comics', 'Admin\ComicController@index')->name('comics');

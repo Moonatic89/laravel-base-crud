@@ -97,4 +97,11 @@ class ComicController extends Controller
     {
         //
     }
+
+
+    public function admin()
+    {
+        $comics = Comic::all();
+        return view('admin.comics.admin', compact('comics'));
+    }
 }

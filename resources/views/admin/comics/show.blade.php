@@ -6,39 +6,22 @@
 @section('content')
 
 
-<div class="container">
-    <div class="issue text-center">
+<div class="container d-flex justify-content-center mt-5">
 
-        <h2>{{$comic->series}}</h2>
-
-
-
-
-        <div class="card text-center">
-            <div class="card-header">
-                <ul class="nav nav-pills card-header-pills">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Active pill</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pill</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled pill</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="card-body">
-                <h4 class="card-title">Title</h4>
-                <p class="card-text">Body</p>
-            </div>
+    <div class="card" style="width: 18rem;">
+        <img src="{{$comic->thumb}}" class="card-img-top" alt="{{$comic->series}}">
+        <div class="card-body">
+            <h5 class="card-title">{{$comic->series}}</h5>
+            <p class="card-text">{{$comic->description}}</p>
         </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{$comic->price}}</li>
 
-
-
+        </ul>
     </div>
 
 </div>
+
 
 
 @endsection
