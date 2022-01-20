@@ -17,8 +17,8 @@ Route::get('/', 'PageController@index')->name('welcome');
 
 //7 routes
 Route::get('comics', 'Admin\ComicController@index')->name('comics');
-Route::get('comics/create', 'Admin\ComicController@create');
-Route::post('comics', 'Admin\ComicController@store');
+Route::get('comics/create', 'Admin\ComicController@create')->name('admin.comics.create');
+Route::post('comics', 'Admin\ComicController@store')->name('admin.comics.store');
 Route::get('comics/{comic}', 'Admin\ComicController@show');
 Route::get('comics/{comic}/edit', 'Admin\ComicController@edit');
 Route::put('comics/{comic}', 'Admin\ComicController@update');
