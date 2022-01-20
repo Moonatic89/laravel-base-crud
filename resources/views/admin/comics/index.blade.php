@@ -21,7 +21,8 @@
                     <p class="card-text">
                         {{\Illuminate\Support\Str::limit($comic->description, 40, $end='...')}}
                     </p>
-                    <a href="#" class="btn btn-primary">View</a>
+
+                    <a href="{{route('admin.comics.show', $comic->id)}}" class="btn btn-primary">View</a>
                 </div>
             </div>
 
