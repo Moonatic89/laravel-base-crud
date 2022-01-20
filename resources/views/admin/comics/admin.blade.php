@@ -41,8 +41,11 @@
                     <a class="btn btn-secondary" href="{{route('admin.comics.edit', $comic->id)}}">Edit Comic</a>
                     <!-- I have to implement this -->
 
-                    <a class="btn btn-danger" href="{{route('admin.comics.destroy', $comic->id)}}">Delete Comic</a>
-                    <!-- I have to implement this -->
+                    <form action="{{route('admin.comics.destroy', $comic->id)}}" method="post">
+                        @csrf
+                        @method('DELETE')
+
+                        <button type="submit" class="btn btn-danger">Delete Comic</button>
 
                 </td>
             </tr>
