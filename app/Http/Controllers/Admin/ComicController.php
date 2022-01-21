@@ -99,6 +99,7 @@ class ComicController extends Controller
      */
     public function destroy(Comic $comic)
     {
+        // ddd($comic);
         $comic->delete();
         return redirect()->route('adminpage')->with('message', 'Comic Cancellato');
     }
