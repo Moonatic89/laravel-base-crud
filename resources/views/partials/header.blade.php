@@ -8,10 +8,10 @@
             <a href="{{route('comics')}}" class="nav-link active" data-bs-toggle="tab">Comics</a>
         </li>
         <li class="nav-item">
-            <a href="{{route('adminpage')}}" class="nav-link" data-bs-toggle="tab">ADMIN SECTION</a>
+            <a href="{{route('movies')}}" class="nav-link active" data-bs-toggle="tab">Movies</a>
         </li>
-        <li class="nav-item" role="presentation">
-            <a href="#" class="nav-link disabled" data-bs-toggle="tab">Disabled</a>
+        <li class="nav-item">
+            <a href="{{route('games')}}" class="nav-link active" data-bs-toggle="tab">Games</a>
         </li>
     </ul>
 
