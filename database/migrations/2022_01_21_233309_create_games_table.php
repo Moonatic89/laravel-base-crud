@@ -15,6 +15,10 @@ class CreateGamesTable extends Migration
     {
         Schema::create('games', function (Blueprint $table) {
             $table->id();
+            $table->string('title', 200);
+            $table->string('thumb')->default('https://picsum.photos/300/200');
+            $table->longText('description')->nullable();
+            $table->boolean('is_available')->default(true);
             $table->timestamps();
         });
     }

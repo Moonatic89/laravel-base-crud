@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\Games;
+use App\Models\Movie;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class GamesController extends Controller
+class MovieController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,8 @@ class GamesController extends Controller
      */
     public function index()
     {
-        //
+        $movies = Movie::all();
+        return view('admin.movies.index', compact('movies'));
     }
 
     /**
@@ -41,10 +43,10 @@ class GamesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Games  $games
+     * @param  \App\Models\Movie  $movie
      * @return \Illuminate\Http\Response
      */
-    public function show(Games $games)
+    public function show(Movie $movie)
     {
         //
     }
@@ -52,10 +54,10 @@ class GamesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Games  $games
+     * @param  \App\Models\Movie  $movie
      * @return \Illuminate\Http\Response
      */
-    public function edit(Games $games)
+    public function edit(Movie $movie)
     {
         //
     }
@@ -64,10 +66,10 @@ class GamesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Games  $games
+     * @param  \App\Models\Movie  $movie
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Games $games)
+    public function update(Request $request, Movie $movie)
     {
         //
     }
@@ -75,11 +77,17 @@ class GamesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Games  $games
+     * @param  \App\Models\Movie  $movie
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Games $games)
+    public function destroy(Movie $movie)
     {
         //
+    }
+
+    public function admin()
+    {
+        $movies = Movie::all();
+        return view('admin.movies.admin', compact('movies'));
     }
 }

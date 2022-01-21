@@ -5,7 +5,7 @@
 
 <div class="container mt-5">
 
-    <a name="create" id="create" class="btn btn-primary text-center" href="{{route('adminpage')}}" role="button">Click
+    <a name="create" id="create" class="btn btn-primary text-center" href="{{route('admincomics')}}" role="button">Click
         here to enter Admin section</a>
 
     <!-- <a name="create" id="create" class="btn btn-primary text-center" href="{{route('admin.comics.create')}}" role="button">Click
