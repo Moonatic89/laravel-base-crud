@@ -12,6 +12,10 @@ class GameSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $_game = new Game();
+        $_game->title = 'TEMPLATE';
+        $_game->thumb = 'https://picsum.photos/300/200';
+        $_game->description = 'Lorem Ipsum Times Twenty';
+        $_game->save();
     }
 }

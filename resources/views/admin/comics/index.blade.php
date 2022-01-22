@@ -8,10 +8,6 @@
     <a name="create" id="create" class="btn btn-primary text-center" href="{{route('admincomics')}}" role="button">Click
         here to enter Admin section</a>
 
-    <!-- <a name="create" id="create" class="btn btn-primary text-center" href="{{route('admin.comics.create')}}" role="button">Click
-        here to add a new Comic</a> -->
-
-
     <div class="row row-cols-4 mt-3">
         @foreach($comics as $comic)
 

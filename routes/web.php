@@ -15,8 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PageController@index')->name('welcome');
 Route::get('admin/comics/admin', 'Admin\ComicController@admin')->name('admincomics');
-Route::get('admin/movies/admin', 'Admin\ComicController@admin')->name('adminmovies');
-Route::get('admin/games/admin', 'Admin\ComicController@admin')->name('admingames');
+Route::get('admin/movies/admin', 'Admin\MovieController@admin')->name('adminmovies');
+Route::get('admin/games/admin', 'Admin\GameController@admin')->name('admingames');
 
 
 
