@@ -26,7 +26,7 @@ class MovieController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.movies.create');
     }
 
     /**
@@ -37,7 +37,15 @@ class MovieController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //ddd($request->all());
+        $movie = new Movie();
+        $movie->title = $request->title;
+        $movie->thumb = $request->thumb;
+        $movie->description = $request->description;
+        $movie->save();
+
+        //Redirect
+        return redirect()->route('movies');
     }
 
     /**
@@ -48,7 +56,7 @@ class MovieController extends Controller
      */
     public function show(Movie $movie)
     {
-        //
+        return view('admin.movies.show', compact('movie'));
     }
 
     /**
@@ -59,7 +67,7 @@ class MovieController extends Controller
      */
     public function edit(Movie $movie)
     {
-        //
+        return view('admin.movies.edit', compact('movie'));
     }
 
     /**
@@ -71,7 +79,14 @@ class MovieController extends Controller
      */
     public function update(Request $request, Movie $movie)
     {
-        //
+        $validated_data = $request->validate([
+            'title' => 'required',
+            'description' => 'nullable',
+            'thumb' => 'nullable'
+        ]);
+
+        $movie->update($validated_data);
+        return redirect()->route('adminmovies')->with('message', 'Movie Modified');
     }
 
     /**
@@ -82,7 +97,8 @@ class MovieController extends Controller
      */
     public function destroy(Movie $movie)
     {
-        //
+        $movie->delete();
+        return redirect()->route('adminmovies')->with('message', 'Movie Erased');
     }
 
     public function admin()

@@ -88,7 +88,7 @@ class ComicController extends Controller
 
         $comic->update($validated_data);
 
-        return redirect()->route('adminpage')->with('message', 'Comic Modificato');
+        return redirect()->route('admincomics')->with('message', 'Comic Modificato');
     }
 
     /**

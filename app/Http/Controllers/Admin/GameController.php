@@ -26,7 +26,7 @@ class GameController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.games.create');
     }
 
     /**
@@ -37,7 +37,15 @@ class GameController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //ddd($request->all());
+        $game = new Game();
+        $game->title = $request->title;
+        $game->thumb = $request->thumb;
+        $game->description = $request->description;
+        $game->save();
+
+        //Redirect
+        return redirect()->route('games');
     }
 
     /**
@@ -48,7 +56,7 @@ class GameController extends Controller
      */
     public function show(Game $game)
     {
-        //
+        return view('admin.games.show', compact('game'));
     }
 
     /**
@@ -59,7 +67,7 @@ class GameController extends Controller
      */
     public function edit(Game $game)
     {
-        //
+        return view('admin.games.edit', compact('game'));
     }
 
     /**
@@ -71,7 +79,16 @@ class GameController extends Controller
      */
     public function update(Request $request, Game $game)
     {
-        //
+        //Data Validation
+        $validated_data = $request->validate([
+            'title' => 'required',
+            'description' => 'nullable',
+            'thumb' => 'nullable'
+        ]);
+
+        $game->update($validated_data);
+
+        return redirect()->route('admingames')->with('message', 'Game Modified');
     }
 
     /**
@@ -82,12 +99,13 @@ class GameController extends Controller
      */
     public function destroy(Game $game)
     {
-        //
+        $game->delete();
+        return redirect()->route('admingames')->with('message', 'Comic Cancellato');
     }
 
     public function admin()
     {
-        $comics = Game::all();
+        $games = Game::all();
         return view('admin.games.admin', compact('games'));
     }
 }

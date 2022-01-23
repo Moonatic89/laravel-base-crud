@@ -2,20 +2,14 @@
 
 @section('content')
 <div class="container">
+
     <h1>Add a new Game!</h1>
-
-
-    <!-- I HAVE TO FINISH THIS -->
-
-
-
-
     <form action="{{route('admin.games.store')}}" method="post">
         @csrf
 
         <div class="mb-3">
             <label for="title" class="form-label">Game Name</label>
-            <input type="text" name="title" id="title" class="form-control" placeholder="Type here Game's name"
+            <input type="text" name="title" id="title" class="form-control" placeholder="Type here Game name"
                 aria-describedby="titleHelper" required>
             <small id="titleHelper" class="text-muted">Here goes new game name.</small>
         </div>
@@ -24,7 +18,7 @@
             <label for="thumb" class="form-label">Game Image</label>
             <input type="text" name="thumb" id="thumb" class="form-control" placeholder="Insert here Thumb Url"
                 aria-describedby="titleHelper" required>
-            <small id="titleHelper" class="text-muted">Here goes new game url.</small>
+            <small id="titleHelper" class="text-muted">Here goes new game Thumbnail url.</small>
         </div>
 
         <div class="mb-3">
